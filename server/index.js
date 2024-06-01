@@ -9,6 +9,14 @@ require("./database/client").checkConnection();
 // Import the Express application from app/config.js
 const app = require("./app/config");
 
+// Déclaration des routes
+
+const sayHello = (req, res) => {
+  res.send("Welcome to Wild Series !");
+};
+
+app.get("/", sayHello);
+
 // Get the port from the environment variables
 const port = process.env.APP_PORT;
 
