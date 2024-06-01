@@ -4,6 +4,10 @@ const router = express.Router();
 
 /* ************************************************************************* */
 // Import And Use Routers Here
+const categoriesRouter = require("./categories/router");
+
+router.use("/categories", categoriesRouter);
+
 const { sayWelcome } = require("../../controllers/sayActions");
 
 router.get("/", sayWelcome);
