@@ -16,6 +16,7 @@ const browse = async (req, res, next) => {
 };
 
 // The R of BREAD - Read operation
+
 const read = async (req, res, next) => {
   try {
     // Fetch a specific item from the database based on the provided ID
