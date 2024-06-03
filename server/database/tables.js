@@ -1,25 +1,12 @@
 // Import the repository modules responsible for handling data operations on the tables
 const ItemRepository = require("./models/ItemRepository");
 const CategoryRepository = require("./models/CategoryRepository");
-const AbstractRepository = require("./models/AbstractRepository");
 
 // Create an empty object to hold data repositories for different tables
 const tables = {};
 
 /* ************************************************************************* */
-// Register data repositories for tables
-class ProgramRepository extends AbstractRepository {
-  constructor() {
-    super({ table: "program" });
-  }
 
-  async readAll() {
-    const [rows] = await this.database.query(`select * from ${this.table}`);
-
-    // Return the array of categories
-    return rows;
-  }
-}
 /* ************************************************************************* */
 
 // Register each repository as data access point for its table
@@ -43,4 +30,4 @@ module.exports = new Proxy(tables, {
   },
 });
 
-module.exports = ProgramRepository;
+// module.exports = ProgramRepository;
